@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>inevby | Telegram Гарант — NFT Аренда | Синяя версия</title>
+    <title>inevby | Telegram Гарант — NFT Аренда</title>
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -14,7 +14,7 @@
         }
 
         body {
-            background: radial-gradient(circle at 20% 30%, #0a1030, #010108);
+            background: radial-gradient(circle at 20% 30%, #2a1f0a, #0c0802);
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
             color: #fff;
             line-height: 1.5;
@@ -22,7 +22,7 @@
             position: relative;
         }
 
-        /* Синий фон с эффектом свечения */
+        /* Жёлтая RGB анимация фона */
         body::before {
             content: '';
             position: fixed;
@@ -30,7 +30,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(ellipse at 40% 50%, rgba(0, 100, 255, 0.12), rgba(0, 40, 100, 0.03) 70%);
+            background: radial-gradient(ellipse at 40% 50%, rgba(255, 200, 0, 0.12), rgba(80, 60, 0, 0.03) 70%);
             pointer-events: none;
             z-index: 0;
         }
@@ -43,23 +43,27 @@
             z-index: 2;
         }
 
-        /* СИНЯЯ анимация границ */
-        @keyframes blueBorderPulse {
+        /* Жёлтая RGB анимация border */
+        @keyframes rgbBorderGold {
             0% {
-                border-color: #0044cc;
-                box-shadow: 0 0 6px rgba(0, 100, 255, 0.5);
+                border-color: rgb(255, 200, 0);
+                box-shadow: 0 0 8px rgba(255, 200, 0, 0.6);
             }
-            50% {
-                border-color: #3388ff;
-                box-shadow: 0 0 16px rgba(0, 120, 255, 0.9);
+            33% {
+                border-color: rgb(255, 220, 80);
+                box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+            }
+            66% {
+                border-color: rgb(204, 153, 0);
+                box-shadow: 0 0 10px rgba(255, 200, 0, 0.9);
             }
             100% {
-                border-color: #0044cc;
-                box-shadow: 0 0 6px rgba(0, 100, 255, 0.5);
+                border-color: rgb(255, 200, 0);
+                box-shadow: 0 0 8px rgba(255, 200, 0, 0.6);
             }
         }
 
-        /* language switcher - синий */
+        /* language switcher */
         .lang-switch {
             position: fixed;
             top: 20px;
@@ -67,17 +71,17 @@
             z-index: 100;
             display: flex;
             gap: 10px;
-            background: rgba(0, 20, 60, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
             padding: 8px 16px;
             border-radius: 50px;
-            border: 1.5px solid #2266dd;
-            animation: blueBorderPulse 2.2s infinite ease;
+            border: 1.5px solid;
+            animation: rgbBorderGold 2s infinite ease;
         }
         .lang-btn {
             background: transparent;
             border: none;
-            color: #ccddff;
+            color: #fff;
             font-weight: bold;
             cursor: pointer;
             padding: 6px 14px;
@@ -86,44 +90,42 @@
             font-size: 0.9rem;
         }
         .lang-btn.active {
-            background: #2266ff;
-            color: white;
-            box-shadow: 0 0 12px #3388ff;
+            background: #e6b800;
+            box-shadow: 0 0 12px #ffcc44;
         }
         .lang-btn:hover:not(.active) {
-            background: rgba(34, 102, 255, 0.4);
-            color: white;
+            background: rgba(230, 184, 0, 0.5);
         }
 
         /* header / hero */
         .hero {
             padding: 60px 0 40px;
             text-align: center;
-            border-bottom: 1px solid rgba(0, 100, 255, 0.5);
+            border-bottom: 1px solid rgba(255, 200, 0, 0.5);
         }
         .logo {
             font-size: 4.2rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #ffffff, #66aaff, #3388ff, #66aaff);
+            background: linear-gradient(135deg, #FFFFFF, #FFD966, #FFCC33, #FFFFFF);
             background-size: 300% 200%;
-            animation: blueShine 4s ease infinite;
+            animation: goldShine 4s ease infinite;
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             margin-bottom: 12px;
-            text-shadow: 0 0 10px rgba(0, 100, 255, 0.4);
+            text-shadow: 0 0 10px rgba(255, 200, 0, 0.3);
         }
-        @keyframes blueShine {
+        @keyframes goldShine {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
         .tagline {
             font-size: 1.2rem;
-            color: #88bbff;
+            color: #FFE28A;
             margin-top: 8px;
-            text-shadow: 0 0 6px #3388ff;
+            text-shadow: 0 0 6px #ffcc33;
         }
         .badge-row {
             display: flex;
@@ -133,52 +135,50 @@
             flex-wrap: wrap;
         }
         .badge {
-            background: rgba(0, 20, 60, 0.8);
+            background: rgba(0, 0, 0, 0.65);
             backdrop-filter: blur(8px);
             padding: 8px 24px;
             border-radius: 60px;
             font-weight: 700;
             font-size: 0.9rem;
-            border: 1.5px solid #2266dd;
-            animation: blueBorderPulse 2.5s infinite ease;
+            border: 1.5px solid;
+            animation: rgbBorderGold 2.5s infinite ease;
             transition: 0.2s;
-            color: #bbddff;
         }
         .badge i {
             margin-right: 8px;
-            color: #66aaff;
-            text-shadow: 0 0 4px #3388ff;
+            color: #FFD966;
+            text-shadow: 0 0 5px #ffcc33;
         }
         .badge:hover {
             transform: scale(1.05);
-            background: rgba(34, 102, 255, 0.3);
-            border-color: #88aaff;
+            background: rgba(80, 60, 0, 0.8);
         }
 
         /* sections general */
         section {
             padding: 64px 0;
-            border-bottom: 1px solid rgba(0, 100, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 200, 0, 0.35);
         }
         .section-title {
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 16px;
             letter-spacing: -0.3px;
-            background: linear-gradient(120deg, #ffffff, #88bbff, #3388ff);
+            background: linear-gradient(120deg, #ffffff, #FFE28A, #FFCC33);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             display: inline-block;
         }
         .section-sub {
-            color: #bbd4ff;
+            color: #FFE5B4;
             max-width: 700px;
             margin-bottom: 40px;
             font-size: 1.05rem;
         }
 
-        /* cards / stats - синие */
+        /* cards / stats */
         .stats-row {
             display: flex;
             flex-wrap: wrap;
@@ -187,33 +187,33 @@
             justify-content: center;
         }
         .stat-card {
-            background: linear-gradient(145deg, #0a1435, #020416);
+            background: linear-gradient(145deg, #2a2410, #0c0a03);
             border-radius: 40px;
             padding: 32px 28px;
             text-align: center;
             flex: 1;
             min-width: 180px;
-            border: 1.5px solid #2266dd;
-            animation: blueBorderPulse 2.5s infinite ease;
+            border: 1.5px solid;
+            animation: rgbBorderGold 2.5s infinite ease;
             transition: all 0.3s ease;
             backdrop-filter: blur(4px);
         }
         .stat-card:hover {
             transform: translateY(-8px) scale(1.02);
-            background: linear-gradient(145deg, #102050, #040828);
-            box-shadow: 0 0 30px rgba(0, 100, 255, 0.6);
+            background: linear-gradient(145deg, #3a3018, #181404);
+            box-shadow: 0 0 30px rgba(255, 200, 0, 0.6);
         }
         .stat-number {
             font-size: 3.4rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #FFFFFF, #66aaff);
+            background: linear-gradient(135deg, #FFFFFF, #FFD966);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
         .stat-label {
             font-size: 1rem;
-            color: #cae0ff;
+            color: #FFE5A3;
             margin-top: 8px;
             font-weight: 600;
         }
@@ -226,14 +226,14 @@
             margin-top: 32px;
         }
         .step-item {
-            background: rgba(10, 20, 60, 0.9);
+            background: rgba(30, 24, 10, 0.85);
             backdrop-filter: blur(12px);
             border-radius: 32px;
             padding: 24px 20px;
             flex: 1;
             min-width: 160px;
-            border: 1.5px solid #2266dd;
-            animation: blueBorderPulse 2.2s infinite ease;
+            border: 1.5px solid;
+            animation: rgbBorderGold 2.2s infinite ease;
             transition: all 0.25s;
             position: relative;
             overflow: hidden;
@@ -245,7 +245,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(0, 100, 255, 0.15), transparent);
+            background: radial-gradient(circle, rgba(255, 200, 0, 0.2), transparent);
             opacity: 0;
             transition: opacity 0.4s;
             pointer-events: none;
@@ -255,13 +255,13 @@
         }
         .step-item:hover {
             transform: translateY(-5px);
-            background: #1a2a5a;
-            box-shadow: 0 0 25px rgba(0, 100, 255, 0.5);
+            background: #3a2e12;
+            box-shadow: 0 0 25px rgba(255, 200, 0, 0.5);
         }
         .step-num {
             font-size: 2rem;
             font-weight: 800;
-            background: linear-gradient(145deg, #66aaff, #FFFFFF);
+            background: linear-gradient(145deg, #FFD966, #FFFFFF);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -270,7 +270,7 @@
         .step-text {
             font-weight: 600;
             font-size: 1rem;
-            color: #e5f0ff;
+            color: #FFF2D7;
         }
 
         /* контакты grid */
@@ -281,7 +281,7 @@
             margin: 32px 0 24px;
         }
         .contact-card {
-            background: rgba(8, 18, 55, 0.9);
+            background: rgba(30, 24, 10, 0.85);
             backdrop-filter: blur(8px);
             border-radius: 48px;
             padding: 18px 28px;
@@ -293,75 +293,75 @@
             transition: all 0.3s;
             text-decoration: none;
             color: #ffffff;
-            border: 1.5px solid #2266dd;
-            animation: blueBorderPulse 2.4s infinite ease;
+            border: 1.5px solid;
+            animation: rgbBorderGold 2.4s infinite ease;
             position: relative;
         }
         .contact-card i {
             font-size: 2.2rem;
-            filter: drop-shadow(0 0 4px #3388ff);
+            filter: drop-shadow(0 0 4px #FFD966);
             transition: 0.2s;
-            color: #66aaff;
         }
         .contact-info h4 {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #cce4ff;
+            color: #FFE5B4;
         }
         .contact-info p {
             font-size: 0.85rem;
-            color: #9fbeff;
+            color: #FFDA88;
         }
         .contact-card:hover {
             transform: scale(1.02) translateY(-5px);
-            background: #1a2f6e;
-            box-shadow: 0 0 35px rgba(0, 100, 255, 0.7);
-            border-color: #66aaff;
+            background: #4a3c18;
+            box-shadow: 0 0 35px rgba(255, 200, 0, 0.7);
+            border-color: #ffcc44;
         }
         .contact-card:hover i {
-            filter: drop-shadow(0 0 12px #88bbff);
+            filter: drop-shadow(0 0 12px #FFE28A);
         }
 
         /* wallet */
         .wallet-box {
-            background: linear-gradient(135deg, #0a1238, #01020c);
+            background: linear-gradient(135deg, #2a2410, #0c0a03);
             border-radius: 40px;
             padding: 32px;
             margin: 40px 0 20px;
-            border: 1.5px solid #2266dd;
-            animation: blueBorderPulse 2.5s infinite ease;
+            border: 1.5px solid;
+            animation: rgbBorderGold 2.5s infinite ease;
             transition: 0.2s;
         }
         .wallet-box:hover {
-            box-shadow: 0 0 35px rgba(0, 100, 255, 0.7);
+            box-shadow: 0 0 35px rgba(255, 200, 0, 0.7);
         }
         .wallet-label {
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #88bbff;
+            color: #FFDA88;
             margin-bottom: 12px;
         }
         .wallet-address {
             font-family: monospace;
             font-size: 1rem;
-            background: #030618;
+            background: #030602;
             padding: 16px 20px;
             border-radius: 28px;
             word-break: break-all;
-            border: 1px solid #3388ff;
-            color: #e0f0ff;
+            border: 1px solid #FFCC44;
+            color: #FFF0CC;
         }
 
-        /* кнопки большие - синие */
+        /* кнопки большие */
         .big-button {
             display: block;
             text-align: center;
-            background: linear-gradient(90deg, #2266dd, #4488ff, #66aaff, #4488ff);
+            background: linear-gradient(90deg, #d4a017, #f0b429, #FFCC44, #f0b429);
             background-size: 250% 100%;
-            animation: blueBorderPulse 1.8s infinite ease, gradientShiftBlue 2.2s infinite;
-            border: 2px solid #66aaff;
-            color: white;
+            animation: rgbBorderGold 1.8s infinite ease, gradientShiftGold 2.2s infinite;
+            border: 2px solid;
+            border-color: #FFCC44;
+            color: #1f1a07;
             font-weight: bold;
             padding: 18px 32px;
             border-radius: 80px;
@@ -374,24 +374,26 @@
             max-width: 400px;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: 0 0 15px rgba(0, 100, 255, 0.7);
+            box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
         }
         .big-button:hover {
             transform: scale(1.02);
-            box-shadow: 0 0 35px rgba(0, 100, 255, 1);
+            box-shadow: 0 0 35px rgba(255, 200, 0, 1);
             border-color: #ffffff;
+            color: #000;
         }
-        @keyframes gradientShiftBlue {
+        @keyframes gradientShiftGold {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
         }
 
         .copy-btn {
-            background: linear-gradient(90deg, #2266dd, #4488ff, #66aaff, #4488ff);
+            background: linear-gradient(90deg, #d4a017, #f0b429, #FFCC44, #f0b429);
             background-size: 250% 100%;
-            animation: blueBorderPulse 1.8s infinite ease, gradientShiftBlue 2.2s infinite;
-            border: 2px solid #66aaff;
-            color: white;
+            animation: rgbBorderGold 1.8s infinite ease, gradientShiftGold 2.2s infinite;
+            border: 2px solid;
+            border-color: #FFCC44;
+            color: #1f1a07;
             font-weight: bold;
             padding: 12px 32px;
             border-radius: 60px;
@@ -399,20 +401,21 @@
             font-size: 1rem;
             transition: 0.2s;
             margin-top: 20px;
-            box-shadow: 0 0 12px rgba(0, 100, 255, 0.7);
+            box-shadow: 0 0 12px rgba(255, 200, 0, 0.7);
         }
         .copy-btn:hover {
             transform: scale(1.04);
-            box-shadow: 0 0 28px rgba(0, 100, 255, 1);
+            box-shadow: 0 0 28px rgba(255, 200, 0, 1);
             border-color: #ffffff;
+            color: #000;
         }
 
         .footer {
             text-align: center;
             padding: 40px 0;
             font-size: 0.85rem;
-            color: #bbd4ff;
-            border-top: 1px solid rgba(0, 100, 255, 0.4);
+            color: #FFE5B4;
+            border-top: 1px solid rgba(255, 200, 0, 0.4);
         }
 
         @media (max-width: 700px) {
@@ -451,26 +454,11 @@
         .warning-text {
             font-size: 0.75rem;
             margin-top: 18px;
-            color: #aac9ff;
+            color: #FFE28A;
         }
         .service-btn-wrap {
             text-align: center;
             margin: 20px 0 10px;
-        }
-
-        /* синий скроллбар */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #010120;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #2266dd, #66aaff, #2266dd);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3388ff;
         }
     </style>
 </head>
@@ -569,7 +557,7 @@
            data-en="The safety of your assets is my top priority. I work honestly and quickly.">
            Безопасность ваших активов — мой главный приоритет. Работаю честно и быстро.</p>
         <div class="badge-row" style="justify-content: flex-start; margin-top: 0;">
-            <span class="badge" style="background: #0a1a40;"><i class="fas fa-gem"></i> <span data-ru="Комиссия — 1%" data-en="Commission — 1%">Комиссия — 1%</span></span>
+            <span class="badge" style="background: #2a2410; border-width: 1.5px;"><i class="fas fa-gem"></i> <span data-ru="Комиссия — 1%" data-en="Commission — 1%">Комиссия — 1%</span></span>
         </div>
     </section>
 
@@ -589,10 +577,10 @@
     <section style="border-bottom: none;">
         <h2 class="section-title" data-ru="Кошелек" data-en="Wallet">Кошелек</h2>
         <div class="wallet-box fade-up">
-            <div class="wallet-label"><i class="fas fa-wallet"></i> 🔵 <span data-ru="Адрес для переводов (USDT / TON)" data-en="Address for transfers (USDT / TON)">Адрес для переводов (USDT / TON)</span></div>
+            <div class="wallet-label"><i class="fas fa-wallet"></i> 🟡 <span data-ru="Адрес для переводов (USDT / TON)" data-en="Address for transfers (USDT / TON)">Адрес для переводов (USDT / TON)</span></div>
             <div class="wallet-address" id="walletAddress">UQDwCm-bkXJuTxcVP5fOvB3vi-myQlW7Yzl4naOE10uJcP5e</div>
             <button class="copy-btn" id="copyWalletBtn"><i class="far fa-copy"></i> <span data-ru="Копировать адрес" data-en="Copy address">Копировать адрес</span></button>
-            <p class="warning-text">🔵 Синяя защита | <span data-ru="Только после согласования с гарантом @inevby" data-en="Only after agreement with guarantor @inevby">Только после согласования с гарантом @inevby</span></p>
+            <p class="warning-text">✨ Жёлтая RGB защита | <span data-ru="Только после согласования с гарантом @inevby" data-en="Only after agreement with guarantor @inevby">Только после согласования с гарантом @inevby</span></p>
         </div>
         
         <!-- Большая кнопка Связь со мной -->
@@ -606,8 +594,8 @@
 
 <div class="footer">
     <div class="container">
-        <p>© 2025 inevby — <span data-ru="Telegram Гарант" data-en="Telegram Guarantor">Telegram Гарант</span>. <span style="color:#66aaff;">🔵 <span data-ru="Надежность и скорость" data-en="Reliability and speed">Надежность и скорость</span> 🔵</span></p>
-        <p style="margin-top: 8px;">⚡️ <span data-ru="Безопасные сделки" data-en="Safe deals">Безопасные сделки</span> | <span data-ru="Гарант" data-en="Guarantor">Гарант</span> @inevby | 24/7 🔵</p>
+        <p>© 2025 inevby — <span data-ru="Telegram Гарант" data-en="Telegram Guarantor">Telegram Гарант</span>. <span style="color:#FFD966;">🟡 <span data-ru="Надежность и скорость" data-en="Reliability and speed">Надежность и скорость</span> 🟡</span></p>
+        <p style="margin-top: 8px;">⚡️ <span data-ru="Безопасные сделки" data-en="Safe deals">Безопасные сделки</span> | <span data-ru="Гарант" data-en="Guarantor">Гарант</span> @inevby | 24/7</p>
     </div>
 </div>
 
@@ -649,7 +637,7 @@
     copyBtn?.addEventListener('click', () => {
         navigator.clipboard.writeText(walletAddr).then(() => {
             const originalText = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<i class="fas fa-check-circle"></i> ' + (currentLang === 'ru' ? 'Скопировано! 🔵' : 'Copied! 🔵');
+            copyBtn.innerHTML = '<i class="fas fa-check-circle"></i> ' + (currentLang === 'ru' ? 'Скопировано! ✨' : 'Copied! ✨');
             copyBtn.style.animation = 'none';
             copyBtn.style.transform = 'scale(1.02)';
             setTimeout(() => {
@@ -658,7 +646,7 @@
                 copyBtn.style.transform = '';
             }, 1800);
         }).catch(() => {
-            alert(currentLang === 'ru' ? '🔵 Скопируйте адрес вручную' : '🔵 Copy the address manually');
+            alert(currentLang === 'ru' ? '🟡 Скопируйте адрес вручную' : '🟡 Copy the address manually');
         });
     });
 
@@ -685,11 +673,11 @@
         });
     }, 100);
 
-    // Синяя анимация для всех элементов
-    const allBlueElements = document.querySelectorAll('.badge, .stat-card, .step-item, .contact-card, .wallet-box, .copy-btn, .big-button, .lang-switch');
-    allBlueElements.forEach(el => {
+    // Жёлтая RGB анимация для всех элементов
+    const allRgbElements = document.querySelectorAll('.badge, .stat-card, .step-item, .contact-card, .wallet-box, .copy-btn, .big-button, .lang-switch');
+    allRgbElements.forEach(el => {
         if (!el.style.animation) {
-            el.style.animation = 'blueBorderPulse 2.2s infinite ease';
+            el.style.animation = 'rgbBorderGold 2.2s infinite ease';
         }
     });
 </script>
